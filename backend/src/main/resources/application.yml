@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: meterflow-backend
+  datasource:
+    url: jdbc:postgresql://ep-dry-silence-anyq054x-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_MGl9r8JRLkQZ
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  # Redis (Upstash) — add your Upstash URL & password below after creating a free instance at https://upstash.com
+  # Until then, the rate limiter uses an in-process token bucket (works for single-instance deployment)
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000 # 1 day
+
+# ─── Stripe ────────────────────────────────────────────────────────────────────
+# Get from: https://dashboard.stripe.com/test/apikeys
+stripe:
+  secret-key: YOUR_STRIPE_TEST_SECRET_KEY
+  # Get from Stripe Dashboard > Developers > Webhooks > Add endpoint > signing secret
+  webhook-secret: whsec_dummy_for_local_testing
+  # Get from Stripe Dashboard > Products > Create product > copy the Price ID
+  pro-price-id: price_1TTfENGYqciaiwvyd0BXLUSh
+
+# ─── Upstash Redis ─────────────────────────────────────────────────────────────
+# REST API (for edge functions or simple HTTP calls)
+upstash:
+  redis:
+    rest-url: "https://robust-ringtail-87419.upstash.io"
+    rest-token: "gQAAAAAAAVV7AAIgcDJjZTIyOTg0NmMyNzQ0ZTYxYTJiMGE0OGFhMjAzMGVmYw"
+
+# Standard Redis (for spring-data-redis)
+# Get from: https://console.upstash.com → Create Database → Redis Connect section
+# spring:
+#   data:
+#     redis:
+#       url: rediss://default:YOUR_PASSWORD@robust-ringtail-87419.upstash.io:6379
+
+
