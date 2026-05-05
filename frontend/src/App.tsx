@@ -8,7 +8,7 @@ import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 
 function App() {
-  const isAuthenticated = !!localStorage.getItem('token');
+  const isAuthenticated = !!sessionStorage.getItem('token');
 
   return (
     <Router>

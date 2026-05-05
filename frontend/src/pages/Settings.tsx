@@ -28,7 +28,7 @@ const Settings = () => {
 
   const fetchProfile = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const res = await axios.get('http://localhost:8080/api/v1/user/profile', {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -51,7 +51,7 @@ const Settings = () => {
 
   const handleSaveProfile = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       await axios.put('http://localhost:8080/api/v1/user/profile', {
         fullName,
         usageAlerts,
@@ -69,7 +69,7 @@ const Settings = () => {
   const handleUpdatePassword = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       await axios.put('http://localhost:8080/api/v1/user/password', {
         currentPassword,
         newPassword

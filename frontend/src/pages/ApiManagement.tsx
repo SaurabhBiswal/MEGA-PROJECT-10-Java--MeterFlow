@@ -28,7 +28,7 @@ const ApiManagement = () => {
 
   const fetchApis = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const res = await axios.get('http://localhost:8080/api/v1/apis', {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -41,7 +41,7 @@ const ApiManagement = () => {
 
   const fetchKeys = async (apiId: number) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const res = await axios.get(`http://localhost:8080/api/v1/apis/${apiId}/keys`, {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -58,7 +58,7 @@ const ApiManagement = () => {
   const handleCreateApi = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       await axios.post('http://localhost:8080/api/v1/apis', 
         { name: newApiName, targetBaseUrl: newApiUrl },
         { headers: { Authorization: `Bearer ${token}` } }
@@ -74,7 +74,7 @@ const ApiManagement = () => {
 
   const handleGenerateKey = async (apiId: number) => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const res = await axios.post(`http://localhost:8080/api/v1/apis/${apiId}/keys`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });

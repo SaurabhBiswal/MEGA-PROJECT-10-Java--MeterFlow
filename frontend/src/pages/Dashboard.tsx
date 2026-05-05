@@ -24,7 +24,7 @@ const Dashboard = () => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('upgraded') === 'true') {
       // Call confirm-upgrade to upgrade user role in backend
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       axios.post('http://localhost:8080/api/v1/billing/confirm-upgrade', {}, {
         headers: { Authorization: `Bearer ${token}` }
       }).then(() => {
@@ -37,7 +37,7 @@ const Dashboard = () => {
 
     const fetchStats = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
         const res = await axios.get('http://localhost:8080/api/v1/dashboard/stats', {
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -51,7 +51,7 @@ const Dashboard = () => {
 
   const handleUpgrade = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       const res = await axios.post('http://localhost:8080/api/v1/billing/checkout', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });

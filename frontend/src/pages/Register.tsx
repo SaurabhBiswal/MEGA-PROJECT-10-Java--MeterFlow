@@ -12,7 +12,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:8080/api/v1/auth/register', { email, password });
-      localStorage.setItem('token', res.data.token);
+      sessionStorage.setItem('token', res.data.token);
       navigate('/');
       window.location.reload();
     } catch (error) {
