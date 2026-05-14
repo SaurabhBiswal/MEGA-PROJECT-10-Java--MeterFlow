@@ -2,26 +2,26 @@
 
 MeterFlow is a full-stack SaaS platform that allows developers to proxy their APIs, generate secure API keys, track request usage, apply rate limiting, and calculate billing based on usage. It serves as a dynamic API Gateway layer.
 
-## 🚀 Live Demo & Links
+##  Live Demo & Links
 
-- **Frontend Deployment (Vercel):** [INSERT VERCEL LINK HERE]
-- **Backend Deployment (Render/Railway):** [INSERT BACKEND LINK HERE]
-- **Demo Video:** [INSERT DEMO VIDEO LINK HERE]
+- **Frontend Deployment (Vercel):** []
+- **Backend Deployment (Render/Railway):** []
+- **Demo Video:** []
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
-*(Replace these placeholders with actual screenshots from your app)*
+
 
 ### Dashboard Analytics
-![Dashboard Screenshot](link-to-dashboard-image)
+
 
 ### API Management & Key Generation
-![API Management Screenshot](link-to-api-image)
+
 
 ### Secure Authentication
-![Login Screenshot](link-to-login-image)
+
 
 ---
 
@@ -49,7 +49,7 @@ MeterFlow is a full-stack SaaS platform that allows developers to proxy their AP
 
 ---
 
-## ⚙️ How to Run Locally
+##  How to Run Locally
 
 ### Prerequisites
 - Java 17+
